@@ -81,7 +81,7 @@ type ApplicationSpec struct {
 	RevisionHistoryLimit *int64 `json:"revisionHistoryLimit,omitempty" protobuf:"bytes,7,name=revisionHistoryLimit"`
 
 	// Sources is a reference to the location of the application's manifests or chart
-	Sources ApplicationSources `json:"sources,omitempty" protobuf:"bytes,8,opt,name=sources"`
+	Sources ApplicationSources `json:"sources,omitempty" patchStrategy:"merge" patchMergeKey:"ref" protobuf:"bytes,8,opt,name=sources"`
 }
 
 type TrackingMethod string
